@@ -1,0 +1,13 @@
+__strain designer__
+find homologous genes for an enzyme when one cannot be found for a given org
+find biobrick standard sequences to combine with enzyme genes (as the biobrick part)
+choose software to display the completed plasmid(s) to user after construction
+add option for user to select type of plasmid (from biobrick parts) to place genes on
+optimize codon usage for target organism
+
+__imptools v2__
+if a gene cannot be found for a rxn's enzyme, cannot use this rxn in the pathway
+implement rpair in database so paths are more logical
+add pathweighting to favor 'more common' reagents and rxns which use previous 'sideeffect' products
+make paths non-linear -- can include side rxns to produce reagents for rxns on the 'main path'
+

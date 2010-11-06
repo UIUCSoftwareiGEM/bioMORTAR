@@ -1,0 +1,9 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+{% load comments %}
+
+<br/><br/>
+<h1>Thanks!<h1>
+<br/><br/>
+
+{% endblock %}

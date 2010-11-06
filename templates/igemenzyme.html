@@ -1,0 +1,52 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+<h2>Enzymes/Gene</h2>
+{% if org %}
+Below are the Enzymes corresponding each reaction and the genes for your selected organism (if available). Be sure to click the links to see the detailed Kegg page for each Enzyme/Gene
+{% else %}
+Below are the Enzymes corresponding each reaction. No organism was selected, by clicking on each enzyme you can see all available corresponding genes listed on Kegg. Otherwise, try selecting an organism here to get organism specific genes (if available).
+<br/><table><tr><td>
+<form action="" method="post">{% csrf_token %}
+ <select name="org" size=1>
+                <option value=None>None</option>
+                {% for org in all_orgs %}
+                    <option value={{org.ShortName}}>{{org.FullName}}</option>
+                {% endfor %}
+            </select>
+</td><td>
+<input type="hidden" name="path" value="{{path}}" />
+<input type="submit" value="Organism Specific Genes" /> 
+</td></tr></table>
+{% endif %}
+<br/>
+<table>
+<tr>
+<td>Reactions</td>
+{% for rx in rxn %}
+<td>{{rx}}</td>
+{% endfor %}
+</tr><tr><td>Enzymes</td>
+{% for en in enz %}
+<td>
+{% for e in en %}
+<a href=http://www.kegg.jp/dbget-bin/www_bget?ec:{{e}}>EC{{e}}</a>&nbsp
+<br/>
+{% endfor %}
+</td>
+{% endfor %}
+
+
+</tr><tr><td>Genes</td>
+{% for gene in genes %}
+<td>
+{% for gen in gene %}
+<a href=http://www.kegg.jp/dbget-bin/www_bget?{{gen}}>{{gen}}</a>&nbsp
+<br/>
+{% endfor %}
+</td>
+{% endfor %}
+</tr>
+</table>
+
+
+{% endblock %}

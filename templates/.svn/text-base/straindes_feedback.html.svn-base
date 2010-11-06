@@ -1,0 +1,14 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+{% load comments %}
+
+<h2>Feedback<h2>
+
+<form action="." method="POST">{% csrf_token %}
+<table cellpadding="20">
+{{ form.as_table }}
+</table>
+<p><input type="submit" value="Submit"></p>
+</form>
+
+{% endblock %}

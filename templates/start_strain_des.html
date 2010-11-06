@@ -1,0 +1,125 @@
+{% extends "base_strain_des.html" %}
+{% block pagecontent %}
+
+<h2>Welcome to BioMortar</h2>
+BioMortar is the 2010 project from the Illinois <a href="http://2010.igem.org/Main_Page">iGEM</a> tools team.
+<br>
+<br>
+
+<!--
+For a tutorial, check out How to Use BioMortar or watch the demo.
+
+<br>
+<br>
+
+If you have already mapped the reactions in your desired pathway, input their KeggIDs as a comma-delimited list ('R0169, R01515').
+
+<br>
+<br>
+
+    <form action="results/" method="post">{% csrf_token %}
+    Reactions<br/>
+    <input type="text" name="reactions" value='' />
+    <input type="submit" value="Submit">
+    </form>
+
+
+<br>
+<hr>
+<br>
+Alternatively, first find a pathway you would like to implement using <a href="http://127.0.0.1:8000/imptools/aboutimp/">IMPTools</a>.
+
+-->
+
+The first step in the BioMortar Design Suite is IMPTools.
+
+<br>
+<br>
+
+Type a compound name or <a href="http://www.kegg.jp">KeggID</a> into the form below or simply choose from the drop down menu.<br>
+There are several methods of determining the best path from starting compound. You can select your preferences by adding weights below.<br>
+
+      <br><br/>   <strong>Select Your Compounds</strong>
+<table>
+    <tr>
+        <td >
+            <form action="/strain_designer/pathway/" method="post">{% csrf_token %}
+            Input<br/>
+            <input type="text" id="inputField" name="typein" value=None />
+        </td>
+        <td >
+            Output<br/>
+            <input type="text" id="outputField" name="typeout" value=None />
+        </td>
+		<td >
+            Number of Paths<br/>
+            <select name="num" size=1 />
+            	<option value=1>One</option>
+            	<option value=3>Three</option>
+        </td>
+
+
+
+    </tr>
+</table><br>
+            <strong>Select Your Weighting System</strong>
+<table>
+    <tr>
+        <td align="left" width="15%">
+            Fewest Total Reactants<br/>
+            <input type="text" name="wt1" size="3" value=0 />
+        </td>
+<td align="left" width="15%">
+            Fewest Total Products<br/>
+            <input type="text" name="wt2" size="3" value=0 />
+        </td>
+<td align="left" width="15%">
+            Least ATP consumption<br/>
+            <input type="text" name="wt3" size="3" value=0 />
+        </td>
+<td align="left" width="15%">
+            Known Enzyme Data<br/>
+            <input type="text" name="wt4" size="3" value=1 />
+        </td>
+
+        <td  width="15%">
+            Fewest Changes to Host<br/>
+            <input type="text" name="wt5" size="3" value=0 />
+        </td>
+<td align="left" width="15%">
+            Metabolite Connectivty<br/>
+            <input type="text" name="wt6" size="3" value=1 />
+        </td>
+        </tr>
+</table>
+<table>
+        <tr>
+<td align="left" width="15%">
+	    Preferred Host Organism<br/>
+	    <select name="orgchoice" size=1>
+		{% for org in all_orgs %}
+		    {% if org.ShortName == 'eco' %}
+			<option selected value={{org.id}}>{{org.FullName}}</option>
+		    {% else %}
+			<option value={{org.id}}>{{org.FullName}}</option>
+		    {% endif %}
+		{% endfor %}
+	    </select>
+	</td>
+    </tr>
+</table><br>
+
+<input type="hidden" name="rmlst" value=[] />
+<input type="submit" value="Submit">
+</form>
+	
+
+<br>
+<br>
+
+<script type="text/javascript">
+$("#inputField").autocomplete({source: "/compound_name"}, {autoFill: true});    
+$("#outputField").autocomplete({source: "/compound_name"}, {autoFill: true});    
+</script>
+
+{% endblock %}

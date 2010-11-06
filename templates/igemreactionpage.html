@@ -1,0 +1,20 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+
+<img src="http://www.genome.jp/Fig/reaction/{{kegg}}.gif" /> <br />
+
+This is marked as a Reaction from
+{% for react in all_reacts %}
+{{react}} 
+{% endfor %}
+<br />
+to 
+{% for prod in all_prods %}
+{{prod}}
+{% endfor %}
+<br />
+It is marked as Reversibility = {{rev}}
+<br />
+
+
+{% endblock %}

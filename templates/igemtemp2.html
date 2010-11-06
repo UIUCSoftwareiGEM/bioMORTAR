@@ -1,0 +1,22 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+
+This is a temporary page
+
+Type in a gene in KeggID form (eg hsa:2870 )
+<form action="/igem/biobrick/1/" method="post">{% csrf_token %}
+<input type="text" name="gene" size="8" value="" />
+<input type="submit" value="Highlight">
+</form>
+<br/>
+<br/>
+Or type in a Gene Sequence
+<br/>
+<form action="/igem/biobrick/2/" method="post">{% csrf_token %}
+<TEXTAREA NAME="userdefined" COLS=40 ROWS=6></TEXTAREA>
+<input type="submit" value="Highlight">
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+<h2>About the Team </h2>
+<p>This will be the second year for a software tools team to represent the University of Illinois at IGEM.  The 2010 Illinois Tools team is comprised of students from the fields of biology, bioengineering, and computer science.  These students are extremely motivated, and driven to expand the boundaries of biotechnology.  This year’s team, which consists of four members, hopes to expand the boundaries of the field of genome scale metabolic engineering through synthetic biology.  The group also has two faculty advisors, who have graciously provided their time and energy in guidance of the research.   Below are the names and departments of all the students and faculty who are responsible for making the BioMORTAR project possible.  </p>
+<br/><strong>Students</strong>
+<table><tr><td>
+<ul>
+	<li>Anna Kropornicka (Technical Director)<br/>
+	Senior<br/>
+	Integrative Biology</li><br/>
+
+	<li>Jeremy Kemball (Science Director)<br/>
+	Sophomore <br/>
+	Bioengineering</li><br/>
+
+	<li>Colin Hoffman (Administrative Director)
+	<br/>Sophomore
+	<br/>Bioengineering</li><br/>
+
+	<li>Bobak Hadidi (Lead Developer)
+	<br/>Senior
+	<br/>Computer Science</li><br/>
+	
+</ul><br/>
+
+<strong>Faculty</strong>
+<ul>
+	<li>Dr. Nathan Price
+	<br/>Dept. of Chemical Engineering</li><br/>
+
+	<li>Dr. Kaustubh Bhalerao
+	<br/>Dept. of Agricultural and Biological Engineering</li>
+</ul>
+
+</td><td>
+<img src="http://2010.igem.org/wiki/images/1/1d/Topbar3.png " align='center'>
+</td></tr></table>
+<br/>Be sure to visit our <a href="http://2010.igem.org/Team:UIUC-Illinois-Software/Team">wiki</a> for more information. 
+{% endblock %}

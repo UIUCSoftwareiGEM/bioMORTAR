@@ -1,0 +1,160 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*Make  sure to change the file URL!!!!*/
+body {
+background: #0171AF url(igembackground.gif) repeat-x;
+font-family: "Trebuchet MS" Verdana, Arial, Helvetica, sans-serif;
+font-size: 12px;
+line-height: 17px;
+color: #333;
+}
+
+a {
+text-decoration: none;
+color: #0171AF;
+}
+a:hover {
+text-decoration: underline;
+color: #111;
+}
+
+#wrap {
+margin: 40px auto;
+width: 450px;
+background: #fff;
+border: 10px solid #D1E6EF;
+}
+
+#header {
+height: 90px;
+}
+#header h1 { 
+font-size: 28px;
+letter-spacing: -1px;
+padding: 23px 0 0 20px;
+color: #0171AF;
+}
+#header h1 a { 
+color: #0171AF;
+text-decoration: none;
+font-weight: 100;
+letter-spacing: -2px;
+}
+#header h1 a:hover {
+color: #111;
+}
+#header h2 {
+font-size: 19px;
+color: #ACD3E5;
+padding: 5px 0 0 20px;
+letter-spacing: -1px;
+font-weight: 100;
+}
+
+#menu {
+height: 30px;
+line-height: 30px;
+background: #D1E6EF;
+}
+#menu ul {
+list-style-type: none;
+padding-left: 20px;
+}
+#menu ul li {
+display: block;
+float: left;
+}
+#menu ul li a {
+padding: 0 20px 0 0;
+text-decoration: none;
+font-weight: 100;
+font-size: 14px;
+}
+#menu ul li a:hover {
+color: #111;
+text-decoration: none;
+}
+
+#content {
+padding: 0 20px 20px 20px;
+}
+
+.left {
+float: left;
+width: 400px;
+text-align: justify;
+}
+.left h2 {
+font-size: 18px;
+font-weight: 100;
+padding: 15px 0 7px 0;
+}
+.left h2 a {
+text-decoration: none;
+}
+.left h2 a:hover {
+color: #111;
+}
+
+.right {
+float: right;
+width: 260px;
+padding-top: 10px;
+}
+.right h2 {
+margin: 10px 0 0 0;
+padding-left: 10px;
+height: 28px;
+line-height: 28px;
+background: #D1E6EF;
+color: #111;
+font-size: 13px;
+}
+.right ul {
+padding: 10px 0 15px 10px;
+list-style-type: none;
+}
+.right ul li a {
+color: #648CA5;
+text-decoration: none;
+font-size: 14px;
+font-weight: 100;
+}
+.right ul li a:hover {
+color: #111;
+}
+.adleft {
+float: left;
+height: 105px;
+width:105px;
+border: 10px solid #ACD3E5;
+font-size: 18px;
+color: #aaa;
+text-align: center;
+}
+.adright {
+float: right;
+height: 105px;
+width:105px;
+border: 10px solid #ACD3E5;
+font-size: 18px;
+color: #aaa;
+text-align: center;
+}
+
+#footer {
+height: 20px;
+line-height: 30px;
+background: #D1E6EF;
+text-align: center;
+font-size: 11px;
+}
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+{% extends "igembase.html" %}
+{% block pagecontent %}
+
+Here were your weights:<br/>
+	<table border="1">
+						<tr>
+							<td>
+								In<br/>
+								{{in}} 
+							</td>
+							<td>
+								Out<br/>
+								{{out}} 
+							</td>
+							<td>
+								Fewest Reactants<br/>
+							{{wt1}} 
+							</td>
+							<td>
+								Fewest Products<br/>
+							{{wt2}} 
+							</td>
+							<td>
+								Least ATP <br/>
+							{{wt3}} 
+							</td>
+							<td>
+								Enzyme Data <br/>
+							{{wt4}} 
+							</td>
+                            <td>
+                                Changes to Host <br/>
+								{{wt5}} 
+							</td>
+                            <td>
+                                Metabolite Connectivty<br/>
+							{{wt6}} 
+							</td>
+							<td>
+								Host <br/>
+						{{org}} 
+							</td>
+							<td>
+								Removed<br/>
+							{{removed}}] 
+							</td>
+						</tr>
+					</table>
+
+<table>
+<tr>
+{% for comp,rx in path %}
+<td>
+<a href="/compound/{{comp}}/" title={{comp}}>{{comp}}</a>
+</td>
+{% if not forloop.last %}
+<td>
+<table> <tr> <td>
+		<a href="/reaction/{{rx}}/" title={{rx}}>{{rx}}</a>
+		</td></tr> <tr><td>
+  =====>
+  		</td></tr></table>
+</td>
+{% endif %}
+
+{% endfor %}
+</tr>
+</table>
+
+<br/>
+<strong>Export Options</strong>
+<table>
+<tr><td>
+
+<form action='/igem/xgmml/' method="post">{% csrf_token %}
+<input type="hidden" name="path" value="{{path}}" />
+<input type="submit" value="XGMML" />
+</form>
+
+</td><td>
+
+<form action='/igem/csv/' method="post">{% csrf_token %}
+<input type="hidden" name="path" value="{{path}}" />
+<input type="hidden" name="org" value={{org}} />
+<input type="submit" value="Excel" /> 
+</form>
+
+</td><td>
+
+<form action='enzyme/' method="post">{% csrf_token %}
+<input type="hidden" name="path" value="{{path}}" />
+<input type="hidden" name="org" value={{org}} />
+<input type="submit" value="Enzyme/Gene Data" /> 
+</form>
+
+</td></tr></table>
+
+
+<br/><br/>
+<strong>Stoichiometric Matrix</strong>
+<table border="1">
+<tr>
+<td></td>
+{% for comp,rx in path %}
+{% if not forloop.last %}
+<td><a href="/reaction/{{rx}}/" title={{rx}}>{{rx}}</a> </td>
+{% else %}
+<td>Net Reaction</td>
+{% endif %}
+{% endfor %}
+</tr>
+{% for row,comp in pair %}
+<tr>
+<td>
+<a href="/compound/{{comp}}/" title={{comp}}>{{comp}}</a>
+</td>
+{% for elt in row %}
+<td>
+{{elt}}
+</td>
+{% endfor %}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
