@@ -1,6 +1,0 @@
-{% extends "igembase.html" %}
-{% block pagecontent %}
-<h2>Demo<h2>
-<object width="445" height="364"><param name="movie" value="http://www.youtube.com/v/20CGpB6OvyA&hl=en&fs=1&color1=0x006699&color2=0x54abd6&border=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/20CGpB6OvyA&hl=en&fs=1&color1=0x006699&color2=0x54abd6&border=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="445" height="364"></embed></object>
-
-{% endblock %}

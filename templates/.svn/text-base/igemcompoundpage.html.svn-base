@@ -1,9 +1,0 @@
-{% extends "igembase.html" %}
-{% block pagecontent %}
-<img src="http://www.genome.jp/Fig/compound/{{kegg}}.gif" />
-{% for name in all_names %}
-<br />
-{{name}}
-{% endfor %}
-
-{% endblock %}

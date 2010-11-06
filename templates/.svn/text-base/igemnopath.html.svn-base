@@ -1,4 +1,0 @@
-{% extends "igembase.html" %}
-{% block pagecontent %}
-<h2>{{message}}</h2>
-{% endblock %}

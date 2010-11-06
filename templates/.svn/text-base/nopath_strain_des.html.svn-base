@@ -1,4 +1,0 @@
-{% extends "base_strain_des.html" %}
-{% block pagecontent %}
-<h2>{{message}}</h2>
-{% endblock %}
