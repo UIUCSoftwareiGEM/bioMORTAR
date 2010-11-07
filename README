@@ -1,0 +1,35 @@
+====================================
+      bio M O R T A R  v1.93717
+====================================
+
+
+This readme is a work in progress.
+
+Dependencies:
+
+  python
+    cpickle
+    bioPython
+    SOAPpy
+    PIL
+    jsonpickle
+    cairo
+    reportlab
+    mlabwrap
+    django
+    ...
+
+  matlab
+    mex
+    COBRA Toolbox
+      SBML Toolbox
+      GLPK
+
+  mysql
+  apache
+    mod_wsgi
+      
+    
+
+
+
